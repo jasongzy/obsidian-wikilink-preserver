@@ -1,0 +1,23 @@
+{
+  "name": "obsidian-wikilink-preserver",
+  "version": "1.0.0",
+  "description": "Prevents manually typed [[Wikilinks]] (from autocomplete) from being converted to Markdown links when the 'Use Wikilinks' setting is turned off.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && git add manifest.json versions.json"
+  },
+  "keywords": [],
+  "author": "jasongzy",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/parser": "5.29.0",
+    "builtin-modules": "3.3.0",
+    "esbuild": "^0.25.2",
+    "obsidian": "latest",
+    "typescript": "^5.8.3"
+  }
+}
