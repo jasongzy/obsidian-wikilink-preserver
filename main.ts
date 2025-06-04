@@ -82,6 +82,10 @@ export default class ManualWikilinkPlugin extends Plugin {
 
                 // Determine the base name of the link (file name without .md and without heading/block ref)
                 let linkBaseName = decodedLinkPath;
+                const lastSlashIndex = linkBaseName.lastIndexOf('/');
+                if (lastSlashIndex !== -1) {
+                    linkBaseName = linkBaseName.substring(lastSlashIndex + 1);
+                }
                 const hashIndex = linkBaseName.indexOf('#');
                 if (hashIndex !== -1) {
                     linkBaseName = linkBaseName.substring(0, hashIndex);

@@ -1,6 +1,6 @@
 {
   "name": "obsidian-wikilink-preserver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prevents manually typed [[Wikilinks]] (from autocomplete) from being converted to Markdown links when the 'Use Wikilinks' setting is turned off.",
   "main": "main.js",
   "scripts": {
