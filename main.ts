@@ -113,6 +113,11 @@ export default class ManualWikilinkPlugin extends Plugin {
                     if (displayText === headingOrBlockRef) {
                         isAutoConvertedWikilink = true;
                     }
+                    // This 'else' catches cases where displayText != headingOrBlockRef,
+                    // which happens when Obsidian slugifies a heading (e.g., with a colon).
+                    else {
+                        isAutoConvertedWikilink = true;
+                    }
                 }
 
 
@@ -121,9 +126,7 @@ export default class ManualWikilinkPlugin extends Plugin {
                     // We need to reconstruct the original wikilink format, including the reference if present.
                     let originalWikilinkContent = linkBaseName; // Start with the file name
                     if (hashIndex !== -1) {
-                        // Add the heading/block reference back
-                        const headingOrBlockRef = decodedLinkPath.substring(hashIndex); // Include the '#'
-                        originalWikilinkContent += headingOrBlockRef;
+                        originalWikilinkContent += "#" + displayText;
                     }
 
                     const wikilink = `[[${originalWikilinkContent}]]`;
