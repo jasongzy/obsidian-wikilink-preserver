@@ -1,6 +1,9 @@
 name: Build and Release
 
 on:
+  push:
+    tags:
+      - "**"
   workflow_dispatch:
 
 jobs:
